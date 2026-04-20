@@ -8,7 +8,6 @@ function getWordLength(thisWord){
 }
 function getWord(){//click event of the button.
   theirWord = myInput.value();//get whatever is in the inputBox
-  console.log(theirWord)
 }
 // P5JS functions  don't erase ----------------------------
 function setup() {
