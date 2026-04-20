@@ -1,10 +1,8 @@
 //Global variables
-let myInput, myButton, myImage,theirWord;
+let myInput, myButton, myImage,theirWord,allCaps;
 
 function turnAllCaps(){
-  let allCaps = ''
   allCaps  = myInput.value().toUpperCase();
-  return (allCaps);
 }
 function getWordLength(thisWord){
   //thisWord has a scope local to this function only.
@@ -13,6 +11,7 @@ function getWordLength(thisWord){
 }
 function getWord(){//click event of the button.
   theirWord = myInput.value();//get whatever is in the inputBox
+  turnAllCaps();
 }
 // P5JS functions  don't erase ----------------------------
 function setup() {
@@ -24,11 +23,12 @@ function setup() {
   myButton.position(200,100)
   myButton.mousePressed(getWord)
   myImage = loadImage("Screenshot_2026-04-15_112449-removebg-preview.png")
+  allCaps = ""
 }
 function draw() {
   background(220);
   text("working with strings", 20,50)//title
-  text("All Caps: " + turnAllCaps(), 20,150)
+  text("All Caps: " + allCaps, 20,150)
   text("Length: " + getWordLength(theirWord), 20,175)
   text("All Lower: ", 20,200)
   text("List of vowels: ", 20,225)
