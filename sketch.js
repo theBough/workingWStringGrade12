@@ -1,6 +1,11 @@
 //Global variables
 let myInput, myButton, myImage,theirWord;
 
+function turnAllCaps(){
+  let allCaps = ''
+  allCaps  = myInput.value().toUpperCase();
+  return (allCaps);
+}
 function getWordLength(thisWord){
   //thisWord has a scope local to this function only.
   //we often use the word 'this' to show it's local
@@ -23,7 +28,7 @@ function setup() {
 function draw() {
   background(220);
   text("working with strings", 20,50)//title
-  text("All Caps: ", 20,150)
+  text("All Caps: " + turnAllCaps(), 20,150)
   text("Length: " + getWordLength(theirWord), 20,175)
   text("All Lower: ", 20,200)
   text("List of vowels: ", 20,225)
