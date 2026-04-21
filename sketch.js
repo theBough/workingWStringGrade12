@@ -1,6 +1,19 @@
 //Global variables
 let myInput, myButton, myImage,theirWord,allCaps;
+let dictionary = ['a','e','i','o','u']
 
+function listVowels(thisWord){
+  let vowelList = ""
+  for(let i =0 ;  i< dictionary.length ; i++){
+    if(thisWord.indexOf(dictionary[i]) > -1){
+      //the vowel is in the word
+      vowelList += dictionary[i] + ", "
+    }
+  }//end loop
+  //take off the last two letters of the string
+  vowelList = vowelList.substring(0, vowelList.length -2 )
+  return vowelList
+}
 function turnAllCaps(){
   allCaps  = myInput.value().toUpperCase();
 }
@@ -31,7 +44,7 @@ function draw() {
   text("All Caps: " + allCaps, 20,150)
   text("Length: " + getWordLength(theirWord), 20,175)
   text("All Lower: ", 20,200)
-  text("List of vowels: ", 20,225)
+  text("List of vowels: " + listVowels(theirWord), 20,225)
   image(myImage,200, 50)
   
 }
